@@ -1,0 +1,48 @@
+server:
+  port: 9300
+  servlet:
+    context-path: /course
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://xxx:3306/qiHuaYu-course?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: xxx
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  redis:
+    host: xxx
+    port: 6379
+    password: xxx
+    lettuce:
+      #只有自动配置连接池的依赖,连接池才会生效
+      pool:
+        max-active: 8 #最大连接
+        max-idle: 8 #最大空闲连接
+        min-idle: 0 #最小空闲连接
+        max-wait: 100 #连接等待时间
+easy-generator:
+  open: true
+  template:
+    project-path: xxx
+    base-package-module-name: com.course
+  global:
+    exec-sql: true
+    print-sql-to-file: true
+    sqlMapper: true
+    feature:
+      cache: false
+file:
+  course:
+     #课程小类的封面存储桶
+     cover-bucket: "cover"
+     #课程文件存储桶
+     file-bucket: "file"
+#关闭权限插件的登录拦截器配置
+security-plugin:
+            login: false
+            tokenVerify: false
