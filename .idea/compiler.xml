@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/qhy-auth/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/qhy-common-infrastructure/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for qhy_demo" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../apache-maven-3.6.1/maven_repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
+          <entry name="$PROJECT_DIR$/../apache-maven-3.6.1/maven_repository/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
+          <entry name="$PROJECT_DIR$/../apache-maven-3.6.1/maven_repository/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
+        </processorPath>
+        <module name="qhy-course-server" />
+        <module name="common-fileserver-plugin-starter" />
+        <module name="qhy-file-server" />
+        <module name="qhy-common-infrastructure" />
+        <module name="common-security-plugin-starter" />
+        <module name="qhy-user-server" />
+        <module name="qhy-auth" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth" target="11" />
+      <module name="qhy-common-file-server" target="11" />
+      <module name="QiHuaYu" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

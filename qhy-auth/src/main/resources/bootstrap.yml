@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: qhy-auth
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        namespace: 5e663c40-037d-4738-988e-624772e74f1c
+        ip: localhost
+    #忽略docker0网卡
+    inetutils:
+      ignored-interfaces:
+        - docker0
+seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      namespace: 5e663c40-037d-4738-988e-624772e74f1c
+      group: SEATA_GROUP
+      application: seata-server
+  tx-service-group: seata-qhy # 事务组，根据这个获取tc服务的cluster名称
+  service:
+    vgroup-mapping: # 事务组与TC服务cluster的映射关系
+      seata-qhy: default
+  data-source-proxy-mode: AT

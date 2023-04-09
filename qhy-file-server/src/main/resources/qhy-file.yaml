@@ -1,0 +1,5 @@
+oss:
+  #root-path: C:\Users\zdh\Desktop\test
+  root-path: /home/ubuntu/dhy/qhy/cangku
+  #endpoint: http://119.91.143.140:20001
+  endpoint: https://localhost:20001/file

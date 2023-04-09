@@ -1,0 +1,14 @@
+server:
+  port: 20001
+  servlet:
+    context-path: /file
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+oss:
+  #root-path: C:\Users\zdh\Desktop\test
+  root-path: D:\qhy-demo\file_home
+  #endpoint: http://119.91.143.140:20001
+  endpoint: http://localhost:20001/file

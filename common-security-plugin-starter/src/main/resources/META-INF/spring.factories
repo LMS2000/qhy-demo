@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.security.config.SecurityConfig,\
+com.security.config.CustomGlobalMethodSecurityConfiguration,\
+com.security.util.AutoRegisterAuthorityUtil
+

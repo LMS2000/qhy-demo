@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>qhy_demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <!--    <module>auth</module>-->
+        <!--    <module>common-security-plugin-starter</module>-->
+        <!--    <module>qhy-common-infrastructure</module>-->
+        <!--    <module>qhy-common-checkCode</module>-->
+        <!--    <module>gateWay</module>-->
+        <!--    <module>qhy-file-server</module>-->
+        <!--    <module>qhy-search-server</module>-->
+        <!--    <module>qhy-course-server</module>-->
+        <!--    <module>qhy-user-server</module>-->
+        <!--    <module>qhy-manager-server</module>-->
+        <module>qhy-auth</module>
+        <module>qhy-auth</module>
+        <module>qhy-auth</module>
+        <module>qhy-auth</module>
+        <module>qhy-auth</module>
+        <module>qhy-common-infrastructure</module>
+        <module>common-security-plugin-starter</module>
+        <module>common-security-plugin-starter</module>
+        <module>qhy-file-server</module>
+        <module>common-fileserver-plugin-starter</module>
+        <module>qhy-user-server</module>
+        <module>qhy-course-server</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <mapstruct.version>1.4.1.Final</mapstruct.version>
+        <knife4j.version>3.0.2</knife4j.version>
+        <mybaits.plus.version>3.5.2</mybaits.plus.version>
+        <mysql.version>8.0.11</mysql.version>
+        <druid.version>1.2.12</druid.version>
+        <lombok.version>1.18.24</lombok.version>
+        <hutool.version>5.8.12</hutool.version>
+        <easy-generator.version>1.0-SNAPSHOT</easy-generator.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
+    </properties>
+
+    <parent>
+        <artifactId>spring-boot-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.3.9.RELEASE</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>easyCode.dhy</groupId>
+                <artifactId>Easy-generator</artifactId>
+                <version>${easy-generator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybaits.plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!--druid连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+                  <dependency>
+                    <groupId>org.example</groupId>
+                    <artifactId>qhy-common-infrastructure</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                  </dependency>
+
+                  <dependency>
+                    <groupId>org.example</groupId>
+                    <artifactId>common-security-plugin-starter</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                  </dependency>
+            <!--seata starter 采用1.5.0版本-->
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>1.4.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
