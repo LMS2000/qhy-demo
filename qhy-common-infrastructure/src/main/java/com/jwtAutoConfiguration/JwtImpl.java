@@ -137,7 +137,9 @@ public class JwtImpl implements Jwt {
         if (isTokenExpired(token)) {
             return null;
         }
-        return getUsernameFromToken(token);
+        //如果token没有过期就刷新token
+        String newToken = refreshToken(token);
+        return getUsernameFromToken(newToken);
     }
 
     /**

@@ -27,6 +27,7 @@
         <module name="qhy-common-infrastructure" />
         <module name="common-security-plugin-starter" />
         <module name="qhy-user-server" />
+        <module name="qhy-gateway" />
         <module name="qhy-auth" />
       </profile>
     </annotationProcessing>

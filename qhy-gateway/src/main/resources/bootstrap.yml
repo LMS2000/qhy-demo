@@ -1,0 +1,47 @@
+server:
+  port: 9900 # 网关端口
+spring:
+  application:
+    name: qhy-gateWay # 服务名称
+  cloud:
+    nacos:
+      server-addr: xxx:8848
+      discovery:
+        namespace: qhy-ns
+        ip: xxx
+      config:
+        namespace: qhy-ns
+        shared-configs:
+          - dataId: share-jwt-config.yaml
+            refresh: false
+    #忽略docker0网卡
+    inetutils:
+      ignored-interfaces:
+        - docker0
+    gateway:
+      httpclient:
+        # 网关转发到其他微服务的 HTTP 连接超时,默认为45秒
+        connect-timeout: 5000
+        # 网关转发到其他微服务的 HTTP 响应超时为 500ms
+        response-timeout: 60000
+      routes:
+        - id: qhy-user
+          uri: lb://qhy-user
+          predicates:
+            - Path=/user/**
+        - id: qhy-manager
+          uri: lb://qhy-manager
+          predicates:
+            - Path=/manager/**
+        - id: qhy-course
+          uri: lb://qhy-course
+          predicates:
+            - Path=/course/**
+        - id: qhy-auth
+          uri: lb://qhy-auth
+          predicates:
+            - Path=/auth/**
+        - id: qhy-file
+          uri: lb://qhy-file
+          predicates:
+            - Path=/file/**

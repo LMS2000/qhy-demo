@@ -30,6 +30,7 @@
         <module>common-fileserver-plugin-starter</module>
         <module>qhy-user-server</module>
         <module>qhy-course-server</module>
+        <module>qhy-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
