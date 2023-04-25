@@ -4,9 +4,6 @@
 # 奇幻鱼项目笔记
 
 
-
-
-
 ## 使用MapStruct来处理传递数据不需要过多参数问题
 
 
@@ -274,11 +271,11 @@ Springmvc访问静态资源默认使用SimpleUrlHandlerMapping作为处理器请
 
 首先在AbstractUrlHandlerMapping中使用了UrlPathHelper对url进行第一次的解码处理
 
-![image-20230327183706746](C:\Users\YD\AppData\Roaming\Typora\typora-user-images\image-20230327183706746.png)
+![image-20230327183706746](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230327183706746.png)
 
 UrlPathHelper这里对请求路径解码
 
-![image-20230327185050519](C:\Users\YD\AppData\Roaming\Typora\typora-user-images\image-20230327185050519.png)
+![image-20230327185050519](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230327185050519.png)
 
 
 
@@ -286,13 +283,13 @@ UrlPathHelper这里对请求路径解码
 
 
 
-![image-20230327185811731](C:\Users\YD\AppData\Roaming\Typora\typora-user-images\image-20230327185811731.png)
+![image-20230327185811731](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230327185811731.png)
 
 
 
 第二次路径编码位置在ResourceHttpRequestHandler的handleRequest方法中
 
-![image-20230327193421740](C:\Users\YD\AppData\Roaming\Typora\typora-user-images\image-20230327193421740.png)
+![image-20230327193421740](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230327193421740.png)
 
 
 
@@ -300,7 +297,7 @@ UrlPathHelper这里对请求路径解码
 
 
 
-![image-20230327193138243](C:\Users\YD\AppData\Roaming\Typora\typora-user-images\image-20230327193138243.png)
+![image-20230327193138243](https://service-edu-2000.oss-cn-hangzhou.aliyuncs.com/pic_go_areaimage-20230327193138243.png)
 
 已经解码过的请求路径再进行编码,不就又变成乱码了吗? 当然,这里主要针对中文字符存在这个问题,英文字符没有这个问题。
 
@@ -861,3 +858,5 @@ public class ExecutorConfiguration {
   首先它调用handle方法时传入的是三个匿名的Handle实现类，然后进入它的handle方法去判断
 
 如果是超级管理员就直接返回，如果是普通管理员或者是普通用户的话就判断下是否持有这个课程的访问权。
+
+
